@@ -1,0 +1,12 @@
+name: flippable_box_example
+description: An example project for flippable_box
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flippable_box:
+    path: ../
+
+flutter:
+  uses-material-design: true

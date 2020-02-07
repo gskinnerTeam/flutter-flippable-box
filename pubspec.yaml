@@ -1,0 +1,18 @@
+name: flippable_box
+description: A double-sided widget, that can flip over, revealing content on both sides.
+version: 0.0.1
+author: gskinner.com
+homepage: gskinner.com
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
