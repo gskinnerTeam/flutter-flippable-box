@@ -34,10 +34,10 @@ FlippableBox(
     back: child2,
     isFlipped: _isFlipped,
     borderRadius: 32, //Uses a ClipRRect to clip contents of child containers
-    bg: BoxDecoration(color: Colors.white) //Paints the box itself with a shared background
-    duration: 0.5 //half second duration
-    flipVt: true //Flip vertically instead of horizontal
-    curve: Curves.easeOut 
+    bg: BoxDecoration(color: Colors.white), //Paints the box itself with a shared background
+    duration: 0.5, //half second duration
+    flipVt: true, //Flip vertically instead of horizontal
+    curve: Curves.easeOut,
 )
 ```
 
