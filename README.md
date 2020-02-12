@@ -23,17 +23,23 @@ GestureDetector(
 )
 ```
 
-NOTE: It is required that the children are Containers, and have their size or constraints set manually. This is so the Box knows what it's target size is when animating.
+NOTE: It is required that the children are Containers, and have their size or constraints set manually, as shown in the example above. This is so the Box knows what it's target size is when animating.
 
-Optionally you can provide a BoxDecoration to be used for the background, and a borderRadius to be used for masking / clipping of the contents:
+To control the flip animation, you can set `duration`, `curve` and `flipVt` which will cause the flip to be in the vertical axis rather than horizontal. 
+
+You can also specify a `bg` which takes a BoxDecoration, and a `borderRadius` in case you'd like to clip the child contents. 
 ```
 FlippableBox(
     front: child1,
     back: child2,
-    borderRadius: 32,
-    bg: BoxDecoration(color: Colors.white)
     isFlipped: _isFlipped,
+    borderRadius: 32, //Uses a ClipRRect to clip contents of child containers
+    bg: BoxDecoration(color: Colors.white) //Paints the box itself with a shared background
+    duration: 0.5 //half second duration
+    flipVt: true //Flip vertically instead of horizontal
+    curve: Curves.easeOut 
 )
 ```
 
-
+## Example
+See the example directory for a simple example.
