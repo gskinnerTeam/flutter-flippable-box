@@ -1,14 +1,29 @@
 # flippable_box
 
-A new Flutter package project.
+FlippableBox is a double-sided Container, that holds two pieces of content and automatically re-sizes to match its content, whenever it's flipped over. 
 
-## Getting Started
+<img src='http://screens.gskinner.com/shawn/2020-02-07_01-22-54.gif' />
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Usage
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+First import the package into your class: 
+
+```import 'package:flippable_box/flippable_box.dart';```
+
+Create a FlippableBox with 2 child widgets. Change the `isFlipped` property to trigger the internal flip animation.
+
+```
+  GestureDetector(
+    onTap: () => setState(() => _isFlipped = !_isFlipped),
+    child: FlippableBox(
+      bgDecoration: BoxDecoration(color: Colors.white),
+      front: ChildWidget1(),
+      back: ChildWidget2(),
+      isFlipped: _isFlipped,
+    ),
+  )
+```
+
+
+
+
