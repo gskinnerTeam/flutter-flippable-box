@@ -1,6 +1,7 @@
 # flippable_box
 
 FlippableBox is a double-sided Container, that holds two pieces of content and automatically re-sizes to match its content, whenever it's flipped over. 
+
 <img src="https://screens.gskinner.com/shawn/2020-02-07_01-22-54.gif" alt="" />
 
 ## Usage

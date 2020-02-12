@@ -30,6 +30,7 @@ class _FlippableExampleState extends State<FlippableExample> with SingleTickerPr
             child: FlippableBox(
               front: _buildCard("Front!", 250, 200, Colors.green),
               back: _buildCard("Back...", 350, 350, Colors.red),
+              flipVt: true,
               isFlipped: _isFlipped,
             ),
           ),
