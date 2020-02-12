@@ -28,20 +28,17 @@ class _FlippableExampleState extends State<FlippableExample> with SingleTickerPr
           child: GestureDetector(
             onTap: () => setState(() => _isFlipped = !_isFlipped),
             child: FlippableBox(
-              bgDecoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(6),
-                  boxShadow: [BoxShadow(offset: Offset(2, 2), blurRadius: 2, spreadRadius: 0, color: Colors.black.withOpacity(.2))]),
-              front: _buildCard("Front!", 250, 200),
-              back: _buildCard("Back...", 350, 350),
+              front: _buildCard("Front!", 250, 200, Colors.green),
+              back: _buildCard("Back...", 350, 350, Colors.red),
               isFlipped: _isFlipped,
             ),
           ),
         ));
   }
 
-  Widget _buildCard(String label, double width, double height) {
+  Widget _buildCard(String label, double width, double height, Color color) {
     return Container(
+      color: color,
       width: width,
       height: height,
       child: Center(

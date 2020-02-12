@@ -1,6 +1,6 @@
 name: flippable_box
 description: A double-sided Container, that can flip over, revealing content on both sides.
-version: 0.0.2
+version: 1.0.1
 homepage: https://github.com/gskinnerTeam/flutter-flippable-box
 
 environment:

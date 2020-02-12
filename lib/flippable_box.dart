@@ -5,30 +5,35 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class FlippableBox extends StatelessWidget {
-  final BoxDecoration bgDecoration;
+  final double clipRadius;
+  final BoxDecoration bg;
   final Container front;
   final Container back;
 
   final bool isFlipped;
 
-  const FlippableBox({Key key, this.isFlipped = false, this.front, this.back, this.bgDecoration}) : super(key: key);
+  const FlippableBox({Key key, this.isFlipped = false, this.front, this.back, this.bg, this.clipRadius}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return TweenAnimationBuilder(
       duration: Duration(milliseconds: 700),
       curve: Curves.easeOut,
       tween: Tween(begin: 0.0, end: isFlipped ? 180.0 : 0.0),
       builder: (context, value, child) {
-        var content = value >= 90? back : front;
+        var content = value >= 90 ? back : front;
         return RotationY(
           rotationY: value,
           child: RotationY(
-              rotationY: value > 90? 180 : 0,
+            rotationY: value > 90 ? 180 : 0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(clipRadius ?? 0),
               child: AnimatedBackground(
-                  decoration: bgDecoration,
-                  child: content)),
+                decoration: bg,
+                child: content,
+              ),
+            ),
+          ),
         );
       },
     );
@@ -56,11 +61,11 @@ class RotationY extends StatelessWidget {
 }
 
 class AnimatedBackground extends StatelessWidget {
-
   final Container child;
   final BoxDecoration decoration;
 
   const AnimatedBackground({Key key, this.child, this.decoration}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
