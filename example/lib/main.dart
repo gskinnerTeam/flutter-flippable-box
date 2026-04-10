@@ -1,20 +1,24 @@
 import 'package:flippable_box/flippable_box.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FlippableExample(),
     );
   }
 }
 
 class FlippableExample extends StatefulWidget {
+  const FlippableExample({super.key});
+
   @override
-  _FlippableExampleState createState() => _FlippableExampleState();
+  State<FlippableExample> createState() => _FlippableExampleState();
 }
 
 class _FlippableExampleState extends State<FlippableExample> with SingleTickerProviderStateMixin {
@@ -43,7 +47,7 @@ class _FlippableExampleState extends State<FlippableExample> with SingleTickerPr
       width: width,
       height: height,
       child: Center(
-        child: Text(label, style: TextStyle(fontSize: 32)),
+        child: Text(label, style: const TextStyle(fontSize: 32)),
       ),
     );
   }
