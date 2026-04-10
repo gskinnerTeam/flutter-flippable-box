@@ -1,3 +1,7 @@
+## [2.0.1] April 10, 2026
+
+* Patch release with minor fixes.
+
 ## [2.0.0] April 10, 2026
 
 * **BREAKING**: `front` and `back` parameters changed from `Container` to `Widget` for greater flexibility.
